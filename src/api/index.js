@@ -1,8 +1,10 @@
 import { Router } from 'express'
-import typeFormCallback from './type_form_callback'
+import request_from_partners_callback from './request_from_partners_callback'
+import requestCollback from './request_callback'
 
 const router = new Router()
 
-router.use('/type_form_callbacks', typeFormCallback)
+router.use('/request_from_partners_callbacks', request_from_partners_callback)
+router.use('/request_callbacks', requestCollback)
 
 export default router

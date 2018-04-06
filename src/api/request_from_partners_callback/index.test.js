@@ -5,7 +5,7 @@ import routes from '.'
 import callback_body from './callback_body'
 
 const app = () => express(apiRoot, routes)
-test('POST /type_form_callbacks 201', async () => {
+test('POST /request_from_partners_callbacks 201', async () => {
   const { status, body } = await request(app())
     .post(`${apiRoot}`).send(callback_body);
   expect(status).toBe(201)
