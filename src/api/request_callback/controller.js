@@ -7,6 +7,8 @@ var newIssue =
         },
         "summary": "Test summary",
         "description": "Test description",
+        "customfield_10016": "http://www.atlassian.com",
+
         "issuetype": {
           "name": "Task"
         },
