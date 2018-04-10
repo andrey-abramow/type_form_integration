@@ -7,7 +7,7 @@ export const create = ({ body }, res, next) => {
 
   let request = new RequestForm(body);
 
-  RequestModel.create({ body: body }, (err, request) => {
+  RequestModel.create({ body: body }, (err, _) => {
     if (err) return;
     Issue.create({ name: request.getName(),
                    attachments: request.getAttachments(),

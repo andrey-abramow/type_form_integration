@@ -7,7 +7,7 @@ export const create = ({ body }, res, next) => {
 
   let request = new RequestForm(body);
 
-  RequestFromPartnerModel.create({ body: body }, (err, request) => {
+  RequestFromPartnerModel.create({ body: body }, (err, _) => {
     if (err) return;
 
     Issue.create({ name: request.getName(),
