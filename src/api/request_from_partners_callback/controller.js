@@ -1,7 +1,13 @@
+import Issue from '../../services/jira/issue';
+// import callback_body from './callback_body'
+import RequestForm from '../../services/request_form'
 
 export const create = ({ body }, res, next) => {
-  console.log(body);
-  console.log(body.form_response.answers[0]);
 
-  res.status(201).json(body);
-}
+  let request = new RequestForm(body);
+
+  Issue.create({ name: request.getName(),
+                 description: request.format().join("\r\n") });
+
+  res.status(201).json(body)
+};

@@ -1,30 +1,14 @@
 import Issue from '../../services/jira/issue';
-var newIssue =
-  {
-      "fields": {
-        "project": {
-          "key": "RE"
-        },
-        "summary": "Test summary",
-        "description": "Test description",
-        "customfield_10016": "http://www.atlassian.com",
+// import callback_body from './callback_body'
+import RequestForm from '../../services/request_form'
 
-        "issuetype": {
-          "name": "Task"
-        },
-        "priority": {
-          "name": "Low"
-        },
-        "assignee": {
-          "name": "andrey"
-        },
-        "reporter": {
-          "name": "andrey"
-        },
-      }
-  }
 export const create = ({ body }, res, next) => {
-  Issue.find('RE-184');
+
+  let request = new RequestForm(body);
+
+  Issue.create({ name: request.getName(),
+                 description: request.format().join("\r\n") });
+
   res.status(201).json(body)
-}
+};
 
