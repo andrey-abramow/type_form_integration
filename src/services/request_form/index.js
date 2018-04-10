@@ -29,8 +29,10 @@ class RequestForm {
     return this.data.form_response.definition.title;
   }
 
-  attachments () {
-
+  getAttachments () {
+    return this.getAnswers()
+              .filter((answer) => { return answer.field.type == 'file_upload' })
+              .map((answer) => { return answer.file_url });
   }
 
   private

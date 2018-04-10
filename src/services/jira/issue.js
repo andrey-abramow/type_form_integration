@@ -1,4 +1,7 @@
 import jira from './client'
+import http from 'http';
+import https from 'https';
+import { URL } from 'url'
 
 class Issue {
 
@@ -16,9 +19,9 @@ class Issue {
 
   static create (data) {
     if (process.env.NODE_ENV == 'test')
-      return
+      return;
 
-    issueData = {
+    let issueData = {
       "fields": {
         "project": {
           "key": "RE"
@@ -38,16 +41,30 @@ class Issue {
           "name": "andrey"
         }
       }
-    }
+    };
 
     jira.addNewIssue(issueData)
       .then(issue => {
-        console.log(issue);
+        data.attachments.forEach((file_url) => this.appendAttachment({ issueId: issue.key, url: file_url }) )
       })
       .catch(err => {
         console.error(err);
       });
   }
+
+  static appendAttachment (data) {
+    var client = http;
+    let url = new URL(data.url);
+    if (url.toString().indexOf("https") === 0){
+      client = https;
+    }
+    client.get(data.url, response => {
+      jira.addAttachmentOnIssue(data.issueId, response)
+    });
+
+
+  };
+
 
 }
 export default Issue;

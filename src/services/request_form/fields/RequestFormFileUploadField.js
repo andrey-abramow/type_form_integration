@@ -1,3 +1,5 @@
+import path from 'path'
+
 class RequestFormTextField {
 
   constructor(field, answer) {
@@ -6,7 +8,7 @@ class RequestFormTextField {
   }
 
   to_s() {
-    return `${this.field.title}: ${this.answer.file_url}`
+    return `${this.field.title}: ${path.basename(this.answer.file_url)}`
   }
 }
 export default RequestFormTextField;
