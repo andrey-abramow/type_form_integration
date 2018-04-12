@@ -1,15 +1,12 @@
-import pipedrive from './client'
+import pipedrive from '../client'
 
 class Pipeline {
 
-  static getAll (name, callback) {
-    pipedrive.Pipelines.getAll(callback);
+  static findByName (name, callback) {
+    pipedrive.Pipelines.getAll((err, pipelines) =>{
+      callback(err, pipelines.filter((p) => { return p.get('name') == name }))
+    });
   }
-
-  static create (data, callback) {
-    pipedrive.Deals.add(data, callback);
-  };
-
 
 }
 export default Pipeline;

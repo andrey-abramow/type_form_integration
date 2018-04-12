@@ -17,20 +17,17 @@ class Person {
     })
   }
 
-  static findByEmailOrCreate(data, onSuccess, onError){
+  static findByEmailOrCreate(data, callback){
      this.findByEmail(data.email,
       (person) => {
         if(person) {
-          onSuccess(person)
+          callback(null, person)
         } else {
-          this.create(data, (err, newPerson)=> {
-            if(err) return onError(err)
-            onSuccess(newPerson)
-          })
+          this.create(data, callback)
         }
       },
       (err) => {
-        onError(err);
+        callback(err)
       });
   }
 

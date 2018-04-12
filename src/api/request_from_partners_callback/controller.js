@@ -12,7 +12,7 @@ export const create = ({ body }, res, next) => {
 
     Issue.create({ name: request.getName(),
                    attachments: request.getAttachments(),
-                   description: request.format().join("\r\n") });
+                   description: request.toS() });
   })
 
   res.status(201).json(body)

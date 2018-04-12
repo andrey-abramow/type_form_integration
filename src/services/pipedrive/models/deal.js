@@ -1,4 +1,4 @@
-import pipedrive from './client'
+import pipedrive from '../client'
 
 class Deal {
 

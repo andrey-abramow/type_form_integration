@@ -167,7 +167,7 @@ export default
         "answers": [
             {
                 "type": "text",
-                "text": "Lorem ipsum dolor",
+                "text": "Abramov Andrey",
                 "field": {
                     "id": "fV6GiFk3EQ4r",
                     "type": "short_text"

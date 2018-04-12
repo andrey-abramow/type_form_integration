@@ -19,6 +19,9 @@ class RequestForm {
     this.data = data;
   }
 
+  toS() {
+    return this.format().join("\r\n")
+  }
   format () {
     return this.getFields().map((field) => {
       return this.getFieldFormatter(field).to_s()
