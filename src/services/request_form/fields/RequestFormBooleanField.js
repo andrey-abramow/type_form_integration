@@ -1,12 +1,10 @@
-class RequestFormTextField {
+import RequestFormNullField from './RequestFormNullField'
 
-  constructor(field, answer) {
-    this.field = field;
-    this.answer = answer;
+class RequestFormTextField extends RequestFormNullField {
+
+  getValue() {
+    return `${this.answer.boolean}`
   }
 
-  to_s() {
-    return `${this.field.title}: ${this.answer.boolean}`
-  }
 }
 export default RequestFormTextField;

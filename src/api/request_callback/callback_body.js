@@ -175,7 +175,7 @@ export default
             },
             {
                 "type": "text",
-                "text": "Lorem ipsum dolor",
+                "text": "andrey@rademade.com",
                 "field": {
                     "id": "gCODk70oqZz3",
                     "type": "short_text"
@@ -183,7 +183,7 @@ export default
             },
             {
                 "type": "text",
-                "text": "Lorem ipsum dolor",
+                "text": "Rademade TypeFormINtegration",
                 "field": {
                     "id": "Ym2uy33LhPhk",
                     "type": "short_text"
