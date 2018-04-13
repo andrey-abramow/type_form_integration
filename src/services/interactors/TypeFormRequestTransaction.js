@@ -6,6 +6,7 @@ import CreatePipedriveDeal         from './actions/CreatePipedriveDeal'
 import CreatePipedriveNote         from './actions/CreatePipedriveNote'
 import SaveTypeFormRequest         from './actions/SaveTypeFormRequest'
 import CreateJiraIssue             from './actions/CreateJiraIssue'
+import SendEmailToResponsible      from './actions/SendEmailToResponsible'
 
 class TypeFormRequestTransaction {
   static call(requestBody, callback) {
@@ -17,7 +18,8 @@ class TypeFormRequestTransaction {
         person: FindOrCreatePipedrivePerson(),
         stage: FindPipelineStageForRequest(),
         deal: CreatePipedriveDeal(),
-        note: CreatePipedriveNote()
+        note: CreatePipedriveNote(),
+        sendEmail: SendEmailToResponsible()
       }, callback
     );
   }
