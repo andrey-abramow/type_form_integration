@@ -3,7 +3,7 @@ import TypeFormRequestTransaction from '../../services/interactors/TypeFormReque
 // import Mailer from '../../services/mailer'
 
 export const create = ({ body }, res, next) => {
-  TypeFormRequestTransaction.call(callback_body,
+  TypeFormRequestTransaction.call(body,
     (err, result) => {
       console.log(err, result)
     }
