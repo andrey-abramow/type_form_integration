@@ -298,7 +298,7 @@ export default
             {
                 "type": "choice",
                 "choice": {
-                    "label": "Barcelona"
+                    "label": "Recommendations"
                 },
                 "field": {
                     "id": "Dpqsye1AOfgf",

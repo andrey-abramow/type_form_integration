@@ -2,9 +2,11 @@ import pipedrive from '../client'
 
 class Pipeline {
 
-  static findByName (name, callback) {
+  static findByNameOrDefault (name, callback) {
     pipedrive.Pipelines.getAll((err, pipelines) =>{
-      callback(err, pipelines.filter((p) => { return p.get('name') == name }))
+      // find by name or return first
+      var p = pipelines.find((p) => { return p.get('name') == name }) || pipelines[0]
+      callback(err, p)
     });
   }
 

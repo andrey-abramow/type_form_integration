@@ -20,7 +20,7 @@ class RequestForm {
   }
 
   toS() {
-    return this.format().join("\r\n")
+    return this.format().join("\n\r")
   }
   format () {
     return this.getFields().map((field) => {
@@ -56,8 +56,9 @@ class RequestForm {
     return this.getAnswers().find((answer) => {return answer.field.id == field.id })
   }
 
-
   getFieldFormatter (field) {
+    if (!field) return RequestFormNullField
+
     let answer = this.getFieldAnswer(field)
 
     let fieldFormatterClass = this.constructor.FIELDS_FORMATTERS_MAP[field.type] || RequestFormNullField;

@@ -1,14 +1,12 @@
 import pipedrive from '../client'
-import Pipeline from './pipeline'
+import Pipeline  from './pipeline'
 
 class Stage {
 
   static getFirstForPipelineName (pipelineName, callback) {
-    Pipeline.findByName(pipelineName, (err, pipelines) => {
+    Pipeline.findByNameOrDefault(pipelineName, (err, pipeline) => {
 
       if(err) return callback(err);
-
-      var pipeline = pipelines[0];
 
       if(!pipeline) return callback({message: `Pipeline with name ${pipelineName} not found`})
 
