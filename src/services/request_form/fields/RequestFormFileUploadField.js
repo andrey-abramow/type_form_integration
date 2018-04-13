@@ -1,14 +1,10 @@
 import path from 'path'
+import RequestFormNullField from './RequestFormNullField'
 
-class RequestFormTextField {
+class RequestFormFileUploadField extends RequestFormNullField {
 
-  constructor(field, answer) {
-    this.field = field;
-    this.answer = answer;
-  }
-
-  to_s() {
-    return `${this.field.title}: ${path.basename(this.answer.file_url)}`
+  getValue() {
+    return path.basename(this.answer.file_url)
   }
 }
-export default RequestFormTextField;
+export default RequestFormFileUploadField;

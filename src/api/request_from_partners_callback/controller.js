@@ -1,19 +1,11 @@
-import Issue from '../../services/jira/issue';
-// import callback_body from './callback_body'
-import RequestForm from '../../services/request_form'
-import RequestFromPartnerModel from './model'
+import callback_body                      from './callback_body'
+import TypeFormPartnersRequestTransaction from '../../services/interactors/TypeFormPartnersRequestTransaction'
 
 export const create = ({ body }, res, next) => {
-
-  let request = new RequestForm(body);
-
-  RequestFromPartnerModel.create({ body: body }, (err, _) => {
-    if (err) return;
-
-    Issue.create({ name: request.getName(),
-                   attachments: request.getAttachments(),
-                   description: request.format().join("\r\n") });
-  })
-
+  TypeFormPartnersRequestTransaction.call(callback_body,
+    (err, result) => {
+      console.log(err, result)
+    }
+  );
   res.status(201).json(body)
 };

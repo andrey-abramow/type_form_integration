@@ -19,10 +19,21 @@ class RequestForm {
     this.data = data;
   }
 
+  toS() {
+    return this.format().join("\n\r")
+  }
   format () {
     return this.getFields().map((field) => {
-      return this.format_field(field)
+      return this.getFieldFormatter(field).to_s()
     });
+  }
+
+  getFieldValueByName(fieldName) {
+
+    var field = this.findFieldByTitle(fieldName);
+    var fieldFormatter = this.getFieldFormatter(field);
+    return fieldFormatter.getValue();
+
   }
 
   getName () {
@@ -37,12 +48,22 @@ class RequestForm {
 
   private
 
-  format_field (field) {
-    let answer = this.getAnswers().find((answer) => {return answer.field.id == field.id })
+  findFieldByTitle(title) {
+    return this.getFields().find((field)=> { return field.title == title })
+  }
+
+  getFieldAnswer(field){
+    return this.getAnswers().find((answer) => {return answer.field.id == field.id })
+  }
+
+  getFieldFormatter (field) {
+    if (!field) return RequestFormNullField
+
+    let answer = this.getFieldAnswer(field)
 
     let fieldFormatterClass = this.constructor.FIELDS_FORMATTERS_MAP[field.type] || RequestFormNullField;
 
-    return new fieldFormatterClass(field, answer).to_s();
+    return new fieldFormatterClass(field, answer);
   }
 
   getFields () {

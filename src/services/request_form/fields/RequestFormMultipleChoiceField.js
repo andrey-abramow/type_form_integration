@@ -1,8 +1,12 @@
-class RequestFormMultipleChoiceField {
+import RequestFormNullField from './RequestFormNullField'
 
-  constructor(field, answer) {
-    this.field = field;
-    this.answer = answer;
+class RequestFormMultipleChoiceField extends RequestFormNullField {
+
+  getValue() {
+    if (this.answer.choice)
+      return `${this.answer.choice.label}`
+    else
+      return `${this.answer.choices.labels.join(', ')}`
   }
 
   to_s() {

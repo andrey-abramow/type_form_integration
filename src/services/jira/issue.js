@@ -5,21 +5,21 @@ import { URL } from 'url'
 
 class Issue {
 
-  static find (issueNumber) {
+  static find (issueNumber, callback) {
     if (process.env.NODE_ENV == 'test')
-      return
+      return callback(null, {test: true})
     jira.findIssue(issueNumber)
       .then(issue => {
-        console.log(issue.fields);
+        callback(null, issue)
       })
       .catch(err => {
-        console.error(err);
+        callback(err)
       });
   }
 
-  static create (data) {
+  static create (data, callback) {
     if (process.env.NODE_ENV == 'test')
-      return;
+      return callback(null, {test: true});
 
     let issueData = {
       "fields": {
@@ -35,20 +35,21 @@ class Issue {
           "name": "Low"
         },
         "assignee": {
-          "name": "andrey"
+          "name": process.env.JIRA_ASSIGNEE
         },
         "reporter": {
-          "name": "andrey"
+          "name": process.env.JIRA_REPORTER
         }
       }
     };
 
     jira.addNewIssue(issueData)
       .then(issue => {
+        callback(null, issue)
         data.attachments.forEach((file_url) => this.appendAttachment({ issueId: issue.key, url: file_url }) )
       })
       .catch(err => {
-        console.error(err);
+        callback(err)
       });
   }
 
@@ -61,10 +62,7 @@ class Issue {
     client.get(data.url, response => {
       jira.addAttachmentOnIssue(data.issueId, response)
     });
-
-
   };
-
 
 }
 export default Issue;

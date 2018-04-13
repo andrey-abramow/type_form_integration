@@ -6,6 +6,10 @@ class RequestFormNullField {
   }
 
   to_s() {
+    return `${this.field.title}: ${this.getValue()}`
+  }
+
+  getValue() {
     return `Define field: ${this.field.type}`
   }
 }
