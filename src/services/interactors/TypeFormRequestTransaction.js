@@ -5,7 +5,7 @@ import FindPipelineStageForRequest from './actions/FindPipelineStageForRequest'
 import CreatePipedriveDeal         from './actions/CreatePipedriveDeal'
 import CreatePipedriveNote         from './actions/CreatePipedriveNote'
 import SaveTypeFormRequest         from './actions/SaveTypeFormRequest'
-import CreateJiraIssue             from './actions/CreaTeJiraIssue'
+import CreateJiraIssue             from './actions/CreateJiraIssue'
 
 class TypeFormRequestTransaction {
   static call(requestBody, callback) {
