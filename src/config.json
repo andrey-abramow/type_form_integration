@@ -1,0 +1,21 @@
+{
+  "JIRA_ASSIGNEE":"andrey",
+  "JIRA_REPORTER":"andrey",
+  "users": {
+    "Vitalii Bondarchuk": {
+      "email":"vb@rademade.com"
+    },
+    "Anastasiya Ivanchenko": {
+      "email":"ai@rademade.com"
+    },
+    "Igor Baklytskyi": {
+      "email":"ib@rademade.com"
+    },
+    "Dmitriy Spasibozhko": {
+      "email":"ds@rademade.com"
+    },
+   "Abramov Andreii": {
+      "email":"andrey@rademade.com"
+    }
+  }
+}

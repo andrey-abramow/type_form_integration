@@ -308,7 +308,7 @@ export default
             {
                 "type": "choice",
                 "choice": {
-                    "label": "Barcelona"
+                    "label": "Abramov Andreii"
                 },
                 "field": {
                     "id": "nlHmrKTDTGBZ",

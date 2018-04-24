@@ -2,6 +2,7 @@ import jira from './client'
 import http from 'http';
 import https from 'https';
 import { URL } from 'url'
+import {appConfig} from '../../config'
 
 class Issue {
 
@@ -35,10 +36,10 @@ class Issue {
           "name": "Low"
         },
         "assignee": {
-          "name": process.env.JIRA_ASSIGNEE
+          "name": appConfig.JIRA_ASSIGNEE
         },
         "reporter": {
-          "name": process.env.JIRA_REPORTER
+          "name": appConfig.JIRA_REPORTER
         }
       }
     };
