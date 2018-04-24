@@ -1,8 +1,7 @@
 import jira from './client'
-import http from 'http';
-import https from 'https';
 import { URL } from 'url'
 import {appConfig} from '../../config'
+import request from 'request'
 
 class Issue {
 
@@ -55,14 +54,7 @@ class Issue {
   }
 
   static appendAttachment (data) {
-    var client = http;
-    let url = new URL(data.url);
-    if (url.toString().indexOf("https") === 0){
-      client = https;
-    }
-    client.get(data.url, response => {
-      jira.addAttachmentOnIssue(data.issueId, response)
-    });
+    jira.addAttachmentOnIssue(data.issueId, request.get(data.url));
   };
 
 }
