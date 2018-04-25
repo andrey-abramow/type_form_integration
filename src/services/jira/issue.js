@@ -35,7 +35,7 @@ class Issue {
           "name": "Low"
         },
         "assignee": {
-          "name": appConfig.JIRA_ASSIGNEE
+          "name": ""
         },
         "reporter": {
           "name": appConfig.JIRA_REPORTER
