@@ -1,10 +1,14 @@
 import callback_body              from './callback_body'
 import TypeFormRequestTransaction from '../../services/interactors/TypeFormRequestTransaction'
-import Issue from '../../services/jira/issue'
-// import Mailer from '../../services/mailer'
 export const create = ({ body }, res, next) => {
 
-  TypeFormRequestTransaction.call(body,
+  let requestBody = body;
+
+  if (process.env.NODE_ENV !== 'production'){
+    requestBody = callback_body;
+  }
+
+  TypeFormRequestTransaction.call(requestBody,
     (err, result) => {
       console.log(err, result)
     }

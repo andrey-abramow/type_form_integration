@@ -19,21 +19,11 @@ class RequestForm {
     this.data = data;
   }
 
-  toS() {
-    return this.format().join("\n\r")
-  }
-  format () {
-    return this.getFields().map((field) => {
-      return this.getFieldFormatter(field).to_s()
-    });
-  }
-
   getFieldValueByName(fieldName) {
-
     var field = this.findFieldByTitle(fieldName);
+    if(!field) { throw new TypeError(`Unrecognized field: ${fieldName}`) }
     var fieldFormatter = this.getFieldFormatter(field);
     return fieldFormatter.getValue();
-
   }
 
   getName () {
@@ -57,7 +47,7 @@ class RequestForm {
   }
 
   getFieldFormatter (field) {
-    if (!field) return RequestFormNullField
+    if (!field) return new RequestFormNullField()
 
     let answer = this.getFieldAnswer(field)
 

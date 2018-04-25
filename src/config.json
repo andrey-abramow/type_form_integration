@@ -6,7 +6,7 @@
     "assignee":"",
     "reporter":"andrey"
   },
-  "defaultAssignee": 'Vitalii Bondarchuk',
+  "defaultAssignee": "Vitalii Bondarchuk",
   "users": {
     "Vitalii Bondarchuk": {
       "email":"vb@rademade.com"
@@ -31,5 +31,105 @@
     "Events":"Recommendations(Clients, colleagues)",
     "Rademade colleague reached you out":"Active sales",
     "Partners":"Partners"
+  },
+  "forms": {
+    "common": [
+      {
+        "separator": "\r\n----\r\n",
+        "rowSeparator":": ",
+        "items": [
+          "Your Name and Surname",
+          "Email",
+          "Your location",
+          "How did you find out about the Rademade",
+          "Contact person from Rademade"
+        ]
+      },
+      {
+        "separator": "\r\n----\r\n",
+        "rowSeparator":":",
+        "items": [
+          "Project name",
+          "Domain description",
+          "Is it the first product, you will be developing?"
+        ]
+      },
+      {
+        "separator": "\r\n----\r\n",
+        "rowSeparator":"\r\n",
+        "items": [
+          "Who are the target customers or users?",
+          "Please indicate what type of services do you need:",
+          "Is this a new or on-going project?",
+          "What problem of users you are trying to solve?",
+          "Do you need a mobile app?",
+          "Do you need a responsive design?",
+          "What is your next business goal?",
+          "What are your expectations about the design level",
+          "Do you have any strong limitations we need to be aware of?"
+        ]
+      },
+      {
+        "separator": "",
+        "rowSeparator":"\r\n",
+        "items": [
+          "Comments"
+        ]
+      }
+    ],
+    "partners": [
+      {
+        "separator": "\r\n----\r\n",
+        "rowSeparator":": ",
+        "items": [
+          "Name of partnership company",
+          "Email of contact person",
+          "Location of your client"
+        ]
+      },
+      {
+        "separator": "\r\n----\r\n",
+        "rowSeparator":": ",
+        "items": [
+          "Project name",
+          "Domain description"
+        ]
+      },
+      {
+        "separator": "\r\n----\r\n",
+        "rowSeparator":":",
+        "items": [
+          "What problem of users client is trying to solve?",
+          "Who are the target customers or users?",
+          "What is client's next business goal?",
+          "Is this a new or on-going project?"
+        ]
+      },
+      {
+        "separator": "\r\n----\r\n",
+        "rowSeparator":"\r\n",
+        "items": [
+          "Is this client's first product that he/she will be developing?",
+          "What are the client's expectations about the design level",
+          "Please indicate what type of services is needed for the client",
+          "Does the client need responsive design?",
+          "Does the client need a mobile app?"
+        ]
+      },
+      {
+        "separator": "\r\n----\r\n",
+        "rowSeparator":"\r\n",
+        "items": [
+          "Does client have any strong limitations we need to be aware of?"
+        ]
+      },
+      {
+        "separator": "",
+        "rowSeparator":"\r\n",
+        "items": [
+          "Comments"
+        ]
+      }
+    ]
   }
 }

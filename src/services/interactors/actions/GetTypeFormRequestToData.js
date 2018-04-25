@@ -1,5 +1,6 @@
 import RequestForm from '../../request_form'
 import { appConfig } from '../../../config'
+import Decorator from '../../request_form/decorator'
 
 const FIELDS_MAP = {
   dealName: 'Project name',
@@ -18,7 +19,7 @@ export default (requestBody) => {
       personName: requestForm.getFieldValueByName(FIELDS_MAP.personName),
       pipelineName: appConfig.PIPEDRIVE_MAP[requestForm.getFieldValueByName(FIELDS_MAP.pipelineName)],
       assignee: appConfig.defaultAssignee,
-      content: requestForm.toS(),
+      content: new Decorator(requestForm).decorate('common'),
       requestForm: requestForm
     };
     callback(null, data)
