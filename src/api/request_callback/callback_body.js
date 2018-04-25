@@ -93,7 +93,7 @@ export default {
                         "id": "nlHmrKTDTGBZ"
                     },
                     "choice": {
-                        "label": "Anastasiya Ivanchenko"
+                        "label": "Abramov Andreii"
                     },
                     "type": "choice"
                 },

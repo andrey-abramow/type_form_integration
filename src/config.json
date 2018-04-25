@@ -1,6 +1,6 @@
 {
-  "JIRA_ASSIGNEE":"andrey",
   "JIRA_REPORTER":"andrey",
+  "defaultAssignee": 'Vitalii Bondarchuk',
   "users": {
     "Vitalii Bondarchuk": {
       "email":"vb@rademade.com"

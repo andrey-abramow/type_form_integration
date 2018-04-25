@@ -1,4 +1,5 @@
 import RequestForm from '../../request_form'
+import { appConfig } from '../../../config'
 
 const FIELDS_MAP = {
   dealName: 'Project name',
@@ -16,7 +17,7 @@ export default (requestBody) => {
       personEmail: requestForm.getFieldValueByName(FIELDS_MAP.personEmail),
       personName: requestForm.getFieldValueByName(FIELDS_MAP.personName),
       pipelineName: requestForm.getFieldValueByName(FIELDS_MAP.pipelineName),
-      assignee: requestForm.getFieldValueByName(FIELDS_MAP.assignee) || 'Vitalii Bondarchuk',
+      assignee: appConfig.defaultAssignee,
       content: requestForm.toS(),
       requestForm: requestForm
     };

@@ -2,7 +2,7 @@ import callback_body                      from './callback_body'
 import TypeFormPartnersRequestTransaction from '../../services/interactors/TypeFormPartnersRequestTransaction'
 
 export const create = ({ body }, res, next) => {
-  TypeFormPartnersRequestTransaction.call(body,
+  TypeFormPartnersRequestTransaction.call(callback_body,
     (err, result) => {
       console.log(err, result)
     }
