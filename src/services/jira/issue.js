@@ -24,21 +24,21 @@ class Issue {
     let issueData = {
       "fields": {
         "project": {
-          "key": "RE"
+          "key": appConfig.jira.projectkey
         },
         "summary": data.name,
         "description": data.description,
         "issuetype": {
-          "name": "Task"
+          "name": appConfig.jira.issuetype
         },
         "priority": {
-          "name": "Low"
+          "name": appConfig.jira.priority
         },
         "assignee": {
-          "name": ""
+          "name": appConfig.jira.assignee
         },
         "reporter": {
-          "name": appConfig.JIRA_REPORTER
+          "name": appConfig.jira.reporter
         }
       }
     };

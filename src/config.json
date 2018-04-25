@@ -1,5 +1,11 @@
 {
-  "JIRA_REPORTER":"andrey",
+  "jira": {
+    "projectkey":"RE",
+    "issuetype":"Task",
+    "priority":"Medium",
+    "assignee":"",
+    "reporter":"andrey"
+  },
   "defaultAssignee": 'Vitalii Bondarchuk',
   "users": {
     "Vitalii Bondarchuk": {
