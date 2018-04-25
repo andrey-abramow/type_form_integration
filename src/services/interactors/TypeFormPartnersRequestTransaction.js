@@ -7,6 +7,7 @@ import CreatePipedriveNote              from './actions/CreatePipedriveNote'
 import SaveTypeFormPartnersRequest      from './actions/SaveTypeFormPartnersRequest'
 import CreateJiraIssue                  from './actions/CreateJiraIssue'
 import SendEmailToResponsible           from './actions/SendEmailToResponsible'
+import FormRequestFromPartners          from  '../../api/request_from_partners_callback/model'
 
 class TypeFormPartnersRequestTransaction {
   static call(requestBody, callback) {
@@ -20,7 +21,14 @@ class TypeFormPartnersRequestTransaction {
         deal: CreatePipedriveDeal(),
         note: CreatePipedriveNote(),
         sendEmail: SendEmailToResponsible()
-      }, callback
+      }, (err, results) => {
+        let status = 'success'
+
+        if(err)
+          status = 'error'
+
+        FormRequestFromPartners.findByIdAndUpdate(results.logRequest._id, { status: status }, {}, callback)
+      }
     );
   }
 }

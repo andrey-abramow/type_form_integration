@@ -4,6 +4,9 @@ const formRequestSchema = new Schema({
   body: {
     type: Schema.Types.Mixed
   },
+  status: {
+    type: String
+  },
   created_at: {
     type: String
   }

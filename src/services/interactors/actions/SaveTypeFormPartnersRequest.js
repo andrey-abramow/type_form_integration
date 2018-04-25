@@ -2,6 +2,6 @@ import RequestFromPartnerModel from '../../../api/request_from_partners_callback
 
 export default (requestBody) => {
   return (callback) => {
-    RequestFromPartnerModel.create({ body: requestBody }, callback)
+    RequestFromPartnerModel.create({ body: requestBody, status: 'new' }, callback)
   }
 }

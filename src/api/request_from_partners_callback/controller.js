@@ -10,7 +10,6 @@ export const create = ({ body }, res, next) => {
 
   TypeFormPartnersRequestTransaction.call(requestBody,
     (err, result) => {
-      console.log(err, result)
     }
   );
   res.status(201).json(body)

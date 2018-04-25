@@ -7,6 +7,7 @@ import CreatePipedriveNote         from './actions/CreatePipedriveNote'
 import SaveTypeFormRequest         from './actions/SaveTypeFormRequest'
 import CreateJiraIssue             from './actions/CreateJiraIssue'
 import SendEmailToResponsible      from './actions/SendEmailToResponsible'
+import FormRequestFrom             from  '../../api/request_callback/model'
 
 class TypeFormRequestTransaction {
   static call(requestBody, callback) {
@@ -20,7 +21,14 @@ class TypeFormRequestTransaction {
         deal: CreatePipedriveDeal(),
         note: CreatePipedriveNote(),
         sendEmail: SendEmailToResponsible()
-      }, callback
+      }, (err, results) =>{
+        let status = 'success';
+
+        if(err)
+          status = 'error';
+
+        FormRequestFrom.findByIdAndUpdate(results.logRequest._id, { status: status }, {}, callback)
+      }
     );
   }
 }
