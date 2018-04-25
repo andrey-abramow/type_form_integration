@@ -43,7 +43,7 @@ export default {
                         "id": "Dpqsye1AOfgf"
                     },
                     "choice": {
-                        "label": "Recommendations"
+                        "label": "Rademade colleague reached you out"
                     },
                     "type": "choice"
                 },

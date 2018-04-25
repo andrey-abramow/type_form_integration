@@ -17,5 +17,13 @@
    "Abramov Andreii": {
       "email":"andrey@rademade.com"
     }
+  },
+  "PIPEDRIVE_MAP": {
+    "Recommendations":"Recommendations(Clients, colleagues)",
+    "Platforms (Clutch, Extract, TopAgency, etc)": "Recommendations(Clients, colleagues)",
+    "Google search":"Recommendations(Clients, colleagues)",
+    "Events":"Recommendations(Clients, colleagues)",
+    "Rademade colleague reached you out":"Active sales",
+    "Partners":"Partners"
   }
 }

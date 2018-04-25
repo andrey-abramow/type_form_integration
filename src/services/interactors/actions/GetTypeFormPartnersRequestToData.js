@@ -15,7 +15,7 @@ export default (requestBody) => {
       personEmail: requestForm.getFieldValueByName(FIELDS_MAP.personEmail),
       personName: requestForm.getFieldValueByName(FIELDS_MAP.personName),
       assignee: appConfig.defaultAssignee,
-      pipelineName: 'Partners',
+      pipelineName: appConfig.PIPEDRIVE_MAP['Partners'],
       content: requestForm.toS(),
       requestForm: requestForm
     }
