@@ -21,7 +21,6 @@ class RequestForm {
 
   getFieldValueByName(fieldName) {
     var field = this.findFieldByTitle(fieldName);
-    if(!field) { throw new TypeError(`Unrecognized field: ${fieldName}`) }
     var fieldFormatter = this.getFieldFormatter(field);
     return fieldFormatter.getValue();
   }

@@ -48,9 +48,6 @@ class Issue {
         callback(null, issue)
         data.attachments.forEach((file_url) => this.appendAttachment({ issueId: issue.key, url: file_url }) )
       })
-      .catch(err => {
-        callback(err)
-      });
   }
 
   static appendAttachment (data) {

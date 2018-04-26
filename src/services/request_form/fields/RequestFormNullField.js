@@ -10,7 +10,7 @@ class RequestFormNullField {
   }
 
   getValue() {
-    return `Define field: ${this.field.type}`
+    return `Empty`
   }
 }
 export default RequestFormNullField;
