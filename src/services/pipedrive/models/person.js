@@ -23,7 +23,11 @@ class Person {
         if(person) {
           callback(null, person)
         } else {
-          this.create(data, callback)
+          this.create(data, (err, persons) => {
+           if (err) return callback(err)
+           callback(null, persons)
+
+          })
         }
       },
       (err) => {
