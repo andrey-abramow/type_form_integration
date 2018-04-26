@@ -1,5 +1,5 @@
 export default {
-  "form_response": {
+   "form_response": {
             "answers": [
                 {
                     "field": {
@@ -43,7 +43,7 @@ export default {
                         "id": "Dpqsye1AOfgf"
                     },
                     "choice": {
-                        "label": "Rademade colleague reached you out"
+                        "label": "Recommendations"
                     },
                     "type": "choice"
                 },
@@ -93,7 +93,7 @@ export default {
                         "id": "nlHmrKTDTGBZ"
                     },
                     "choice": {
-                        "label": "Abramov Andreii"
+                        "label": "Anastasiya Ivanchenko"
                     },
                     "type": "choice"
                 },

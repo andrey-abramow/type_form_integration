@@ -21,14 +21,7 @@ class TypeFormPartnersRequestTransaction {
         deal: CreatePipedriveDeal(),
         note: CreatePipedriveNote(),
         sendEmail: SendEmailToResponsible()
-      }, (err, results) => {
-        let status = 'success'
-
-        if(err)
-          status = 'error'
-
-        FormRequestFromPartners.findByIdAndUpdate(results.logRequest._id, { status: status }, {}, callback)
-      }
+      }, callback
     );
   }
 }
