@@ -25,11 +25,11 @@
     }
   },
   "PIPEDRIVE_MAP": {
-    "Recommendations":"Recommendations(Clients, colleagues)",
-    "Platforms (Clutch, Extract, TopAgency, etc)": "Recommendations(Clients, colleagues)",
-    "Google search":"Recommendations(Clients, colleagues)",
-    "Events":"Recommendations(Clients, colleagues)",
-    "Rademade colleague reached you out":"Active sales",
+    "Recommendations":"Recommendations (Clients, colleagues)",
+    "Platforms (Clutch, Extract, TopAgency, etc)": "Inbound Marketing (Site, Platforms)",
+    "Google search":"Active sales (Upwork, LinkedIn, Co-founders, Personal Contact etc.)",
+    "Events":"Events",
+    "Rademade colleague reached you out":"Recommendations (Clients, colleagues)",
     "Partners":"Partners"
   },
   "forms": {
