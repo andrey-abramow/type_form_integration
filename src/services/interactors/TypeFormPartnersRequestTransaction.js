@@ -7,7 +7,7 @@ import CreatePipedriveNote              from './actions/CreatePipedriveNote'
 import SaveTypeFormPartnersRequest      from './actions/SaveTypeFormPartnersRequest'
 import CreateJiraIssue                  from './actions/CreateJiraIssue'
 import SendEmailToResponsible           from './actions/SendEmailToResponsible'
-import FormRequestFromPartners          from  '../../api/request_from_partners_callback/model'
+import SetPipedriveAssigneeUser         from './actions/SetPipedriveAssigneeUser'
 
 class TypeFormPartnersRequestTransaction {
   static call(requestBody, callback) {
@@ -15,6 +15,7 @@ class TypeFormPartnersRequestTransaction {
       {
         logRequest: SaveTypeFormPartnersRequest(requestBody),
         requestFormData: GetTypeFormPartnersRequestToData(requestBody),
+        pipedriveAssigneeUser: SetPipedriveAssigneeUser(),
         jiraIssue: CreateJiraIssue(),
         person: FindOrCreatePipedrivePerson(),
         stage: FindPipelineStageForRequest(),
