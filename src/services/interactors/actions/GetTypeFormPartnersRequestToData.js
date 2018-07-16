@@ -11,11 +11,15 @@ const FIELDS_MAP = {
 export default (requestBody) => {
   return (callback) => {
     var requestForm = new RequestForm(requestBody);
+
+    const assigneeName = appConfig.defaultAssignee;
+    const assigneeEmail = appConfig.users[assigneeName].email;
+
     var data = {
       dealName: requestForm.getFieldValueByName(FIELDS_MAP.dealName),
       personEmail: requestForm.getFieldValueByName(FIELDS_MAP.personEmail),
       personName: requestForm.getFieldValueByName(FIELDS_MAP.personName),
-      assignee: appConfig.defaultAssignee,
+      assigneeEmail: assigneeEmail,
       pipelineName: appConfig.PIPEDRIVE_MAP['Partners'],
       issueName: `Request / ${requestForm.getFieldValueByName(FIELDS_MAP.dealName)}`,
       content: new Decorator(requestForm).decorate('partners'),
