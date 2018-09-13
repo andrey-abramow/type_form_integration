@@ -6,11 +6,11 @@ class RequestFormNullField {
   }
 
   to_s() {
-    return `${this.field.title}: ${this.getValue()}`
+    return `${this.field.title}: ${this.getValue() || 'Empty'}`
   }
 
   getValue() {
-    return `Empty`
+    return ''
   }
 }
 export default RequestFormNullField;
