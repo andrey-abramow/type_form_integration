@@ -9,19 +9,20 @@
   "defaultAssignee": "Vitalii Bondarchuk",
   "users": {
     "Vitalii Bondarchuk": {
-      "email":"vb@rademade.com"
+      "email":"vb@rademade.com",
+      "jiraReporter": "vb"
     },
     "Anastasiya Ivanchenko": {
-      "email":"ai@rademade.com"
+      "email":"ai@rademade.com",
+      "jiraReporter": "ai"
     },
     "Igor Baklytskyi": {
-      "email":"ib@rademade.com"
+      "email":"ib@rademade.com",
+      "jiraReporter": "ib"
     },
-    "Dmitriy Spasibozhko": {
-      "email":"ds@rademade.com"
-    },
-    "Polina Semenova": {
-      "email":"ps@rademade.com"
+    "Buckley Hamman": {
+      "email":"bh@rademade.com",
+      "jiraReporter": "bh"
     }
   },
   "PIPEDRIVE_MAP": {
