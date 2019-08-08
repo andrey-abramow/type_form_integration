@@ -35,10 +35,10 @@ class Issue {
           "name": appConfig.jira.priority
         },
         "assignee": {
-          "name": data.assigneeUser.jiraReporter || appConfig.jira.reporter
+          "name": data.assigneeUser.jiraReporter
         },
         "reporter": {
-          "name": data.assigneeUser.jiraReporter || appConfig.jira.reporter
+          "name": data.assigneeUser.jiraReporter
         }
       }
     };

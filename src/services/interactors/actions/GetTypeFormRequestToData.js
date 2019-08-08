@@ -14,16 +14,20 @@ export default (requestBody) => {
   return (callback) => {
     const requestForm = new RequestForm(requestBody);
 
-    const assigneeName = requestForm.getFieldValueByName(FIELDS_MAP.assignee) || appConfig.defaultAssignee;
-    const assigneeEmail = appConfig.users[assigneeName].email;
+    let assigneeName = requestForm.getFieldValueByName(FIELDS_MAP.assignee);
+
+    // Load default assignee from config if such not exist
+    if (!appConfig.users[assigneeName]) {
+      assigneeName = appConfig.defaultAssignee
+    }
 
     const data = {
       dealName: requestForm.getFieldValueByName(FIELDS_MAP.dealName),
       personEmail: requestForm.getFieldValueByName(FIELDS_MAP.personEmail),
       personName: requestForm.getFieldValueByName(FIELDS_MAP.personName),
       pipelineName: appConfig.PIPEDRIVE_MAP[requestForm.getFieldValueByName(FIELDS_MAP.pipelineName)],
-      assigneeEmail: assigneeEmail,
-      assigneeUser: appConfig.users[assigneeName] ? appConfig.users[assigneeName] : {},
+      assigneeUser: appConfig.users[assigneeName],
+      assigneeEmail: appConfig.users[assigneeName].email,
       issueName: `Request / ${requestForm.getFieldValueByName(FIELDS_MAP.dealName)}`,
       content: new Decorator(requestForm).decorate('common'),
       requestForm: requestForm
