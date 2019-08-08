@@ -6,7 +6,7 @@ export default () => {
       name: result.requestFormData.issueName,
       attachments: result.requestFormData.requestForm.getAttachments(),
       description: result.requestFormData.content,
-      personEmail: result.requestFormData.personEmail
+      assigneeUser: result.requestFormData.assigneeUser
     }, callback)
 
   }]

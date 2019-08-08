@@ -23,6 +23,7 @@ export default (requestBody) => {
       personName: requestForm.getFieldValueByName(FIELDS_MAP.personName),
       pipelineName: appConfig.PIPEDRIVE_MAP[requestForm.getFieldValueByName(FIELDS_MAP.pipelineName)],
       assigneeEmail: assigneeEmail,
+      assigneeUser: appConfig.users[assigneeName],
       issueName: `Request / ${requestForm.getFieldValueByName(FIELDS_MAP.dealName)}`,
       content: new Decorator(requestForm).decorate('common'),
       requestForm: requestForm

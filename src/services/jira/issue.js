@@ -21,15 +21,6 @@ class Issue {
     if (process.env.NODE_ENV == 'test')
       return callback(null, {test: true});
 
-    let reporter = appConfig.jira.reporter;
-
-    // Get jira reporter
-    for (let key in appConfig.users) {
-      if (appConfig.users[key].email === data.personEmail) {
-        reporter = appConfig.users[key].jiraReporter;
-      }
-    }
-
     let issueData = {
       "fields": {
         "project": {
@@ -44,10 +35,10 @@ class Issue {
           "name": appConfig.jira.priority
         },
         "assignee": {
-          "name": appConfig.jira.assignee
+          "name": data.assigneeUser.jiraReporter || appConfig.jira.reporter
         },
         "reporter": {
-          "name": reporter
+          "name": data.assigneeUser.jiraReporter || appConfig.jira.reporter
         }
       }
     };
