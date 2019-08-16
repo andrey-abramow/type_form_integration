@@ -2,7 +2,7 @@ import PipedriveDeal from '../../pipedrive/models/deal'
 import {appConfig} from '../../../config'
 
 export default () => {
-  return ['pipedriveAssigneeUser', 'person', 'stage', 'jiraIssue', (result, callback) => {
+  return ['pipedriveAssigneeUser', 'person', 'jiraIssue', (result, callback) => {
 
     const personId = result.person.id || result.person.get('id');
 
