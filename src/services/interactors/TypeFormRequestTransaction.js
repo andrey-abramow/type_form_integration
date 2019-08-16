@@ -18,7 +18,7 @@ class TypeFormRequestTransaction {
         pipedriveAssigneeUser: SetPipedriveAssigneeUser(),
         jiraIssue: CreateJiraIssue(),
         person: FindOrCreatePipedrivePerson(),
-        stage: FindPipelineStageForRequest(),
+        // stage: FindPipelineStageForRequest(),
         deal: CreatePipedriveDeal(),
         note: CreatePipedriveNote(),
         sendEmail: SendEmailToResponsible()

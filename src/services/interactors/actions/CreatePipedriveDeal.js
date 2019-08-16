@@ -1,4 +1,5 @@
 import PipedriveDeal from '../../pipedrive/models/deal'
+import {appConfig} from '../../../config'
 
 export default () => {
   return ['pipedriveAssigneeUser', 'person', 'stage', 'jiraIssue', (result, callback) => {
@@ -14,7 +15,7 @@ export default () => {
       title: result.requestFormData.dealName,
       person_id: personId,
       user_id: userId,
-      stage_id: result.stage.get('id')
+      stage_id: appConfig.pipedrive.stageId
     }, callback)
   }]
 }

@@ -25,6 +25,9 @@
       "jiraReporter": "bh"
     }
   },
+  "pipedrive": {
+    "stageId": 73
+  },
   "PIPEDRIVE_MAP": {
     "Recommendations":"Recommendations (Clients, colleagues)",
     "Platforms (Clutch, Extract, TopAgency, etc)": "Inbound Marketing (Site, Platforms)",
